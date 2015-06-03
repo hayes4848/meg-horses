@@ -18,3 +18,6 @@ Template.newHorse.events({
     Router.go('horses', horse);
   }
 })
+
+
+

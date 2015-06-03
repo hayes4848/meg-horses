@@ -2,4 +2,13 @@
 	<p>{{name}}</p>
 	<p>{{price}}</p>
 
+	<div><input type="file" class="myFileInput" /></div>
+
+	<div class="imageView">
+    {{#each images}}
+      <div>
+        <a href="{{this.url}}" target="_blank"><img src="{{this.url}}" alt="" class="thumbnail" /></a>
+      </div>
+    {{/each}}
+  </div>
 </template>

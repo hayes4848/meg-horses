@@ -12,3 +12,8 @@ underscore
 iron:router
 ian:accounts-ui-bootstrap-3
 accounts-password
+edgee:slingshot
+cfs:standard-packages
+cfs:s3
+cfs:filesystem
+cfs:gridfs
