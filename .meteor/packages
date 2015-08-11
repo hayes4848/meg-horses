@@ -15,3 +15,7 @@ accounts-password
 cfs:standard-packages
 cfs:filesystem
 cfs:s3
+lepozepo:s3
+mrgalaxy:stripe
+momentjs:moment
+random

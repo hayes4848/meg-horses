@@ -1,5 +1,12 @@
 <template name="horses">
-<h3>My Horses</h3>
+<h3>All Horses</h3>
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-3">Age</div>
+			<div class="col-xs-3">Seller</div>
+			<div class="col-xs-3">Price</div>
+		</div>
+
 	{{#each horses}}
 		<div class="row well">
 			<div class="col-xs-3"><a href="{{pathFor 'singleHorse'}}">{{name}}</a></div>

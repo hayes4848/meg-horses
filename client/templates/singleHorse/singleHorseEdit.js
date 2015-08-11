@@ -1,6 +1,8 @@
-Template.newHorse.events({
+Template.singleHorseEdit.events({
 	'submit form': function(e) {
     e.preventDefault();
+
+    var currentHorseId = this._id;
 
     var horse = {
       age: $(e.target).find('[name=age]').val(),
@@ -14,10 +16,13 @@ Template.newHorse.events({
       owner: Meteor.userId()
     };
 
-    horse._id = Horses.insert(horse);
-    Router.go('step2', horse);
+    Horses.update(currentHorseId, {$set: horse}, function(error) {
+      if (error) {
+        // display the error to the user
+        alert(error.reason);
+      } else {
+    Router.go('singleHorse', {_id: currentHorseId});
+      }
+    })
   }
 })
-
-
-

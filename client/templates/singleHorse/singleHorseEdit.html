@@ -1,34 +1,30 @@
-<template name="newHorse">
-
-<h1 class="text-center">Step 1</h1>
-<h4 class="text-center">Start by adding some information about your horse.</h4><br />
-
-<form name="newHorse">
+<template name='singleHorseEdit'>
+	<form name="editHorse">
 	<div class="row">
 		<div class="col-xs-6 text-right"><label>Name:</label></div>	
-		<div class="col-xs-6"><input type="text" name="name" value=""  /></div>
+		<div class="col-xs-6"><input type="text" name="name" value="{{name}}"  /></div>
 	</div>
 	<div class="row">	
 		<div class="col-xs-6 text-right"><label>Age:</label></div>	
-		<div class="col-xs-6"><input type="text" name="age" value=""  /></div>
+		<div class="col-xs-6"><input type="text" name="age" value="{{age}}"  /></div>
 	</div>
 	<div class="row">	
 		<div class="col-xs-6 text-right"><label>Gender:</label></div>
-		<div class="col-xs-6"><input type="text" name="gender" value=""  /></div>
+		<div class="col-xs-6"><input type="text" name="gender" value="{{gender}}"  /></div>
 	</div>
 	<div class="row">	
 		<div class="col-xs-6 text-right"><label>Weight:</label></div>
-		<div class="col-xs-6"><input type="text" name="weight" value=""  /></div>
+		<div class="col-xs-6"><input type="text" name="weight" value="{{weight}}"  /></div>
 	</div>
 	<div class="row">	
 		<div class="col-xs-6 text-right"><label>Breed:</label></div>
-		<div class="col-xs-6"><input type="text" name="breed" value=""  /></div>
+		<div class="col-xs-6"><input type="text" name="breed" value="{{breed}}"  /></div>
 	</div>
 	<div class="row">	
 		<div class="col-xs-6 text-right"><label>Discipline:</label></div>
 		<div class="col-xs-6">
 			<select>
-				<option></option>
+				<option value ="{{discipline}}"></option>
 				<option class="" name="" value="">Park/English Pleasure</option>
 				<option class="" name="" value="">Country English Pleasure</option>
 				<option class="" name="" value="">Hunter Pleasure</option>
@@ -42,15 +38,14 @@
 	</div>
 	<div class="row">	
 		<div class="col-xs-6 text-right"><label>Price:</label></div>
-		<div class="col-xs-6"><input type="integer" name="price" value=""  /></div>
+		<div class="col-xs-6"><input type="integer" name="price" value="{{price}}"  /></div>
 	</div>
 	<div class="row">	
 		<div class="col-xs-6 text-right"><label>Description:</label></div>
-		<div class="col-xs-6"><textarea name="description" value=""></textarea></div>
+		<div class="col-xs-6"><textarea name="description" value="{{description}}"></textarea></div>
 	</div> <br />
 	<div class="row">	
-		<div class="col-xs-12 text-center"><input type="submit" value="Submit" class="btn btn-primary"/></div>
+		<div class="col-xs-12 text-center"><input type="submit" value="Update" class="btn btn-primary"/></div>
 	</div>	
 </form>
 </template>
-

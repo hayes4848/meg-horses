@@ -1,5 +1,4 @@
-
-Template.singleHorse.events({
+Template.step2.events({
   'change .file_bag': function() {
 
     var files = $("input.file_bag")[0].files
@@ -22,11 +21,16 @@ Template.singleHorse.events({
   }
 });
 
-Template.singleHorse.helpers({
+Template.step2.helpers({
 
     "images": function(){
         return S3.collection.find();
     }, 
+
+
+    horse: function(){
+        return Horses.find({_id: Session.get('horse')});
+    },
 
     pictures: function(){
         return Pictures.find({horse_id: Session.get('horse')}).map(function(picture, index) {
