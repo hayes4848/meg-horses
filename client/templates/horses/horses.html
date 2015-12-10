@@ -1,18 +1,35 @@
 <template name="horses">
-<h3>All Horses</h3>
-		<div class="row">
+<!-- <h3>All Horses</h3> -->
+		<!-- <div class="row">
 			<div class="col-xs-3"></div>
 			<div class="col-xs-3">Age</div>
 			<div class="col-xs-3">Seller</div>
 			<div class="col-xs-3">Price</div>
+		</div> -->
+		<div class="row">
+			<div class="col-xs-12 text-center"><h3>All Horses</h3></div>
 		</div>
 
 	{{#each horses}}
+	<a href="{{pathFor 'singleHorsePublic'}}">
 		<div class="row well">
-			<div class="col-xs-3"><a href="{{pathFor 'singleHorse'}}">{{name}}</a></div>
-			<div class="col-xs-3">{{age}}</div>
-			<div class="col-xs-3">{{weight}}</div>
-			<div class="col-xs-3">{{price}}</div>
+		{{#each pictures}}
+		{{#if isFirst}}
+			<div class="col-xs-3"><img class="img-responsive" src="{{url}}"></div>
+		{{/if}}
+		{{/each}}
+			<div class="col-xs-9">
+				<div class="row ">
+					<div class="col-xs-6 text-center horse-name">{{name}}</div>
+					<div class="col-xs-6 text-right">${{price}}</div>
+				</div>
+				<div class="row ">
+					<div class="col-xs-12">{{age}}</div>
+					<div class="col-xs-12">{{color}}</div>
+					<div class="col-xs-12">{{discipline}}</div>
+				</div>
+			</div>
 		</div>
+	</a>
 	{{/each}}
 </template>
