@@ -1,5 +1,5 @@
 S3.config = {
-    key: Meteor.settings.public.AWS.key,
-    secret: Meteor.settings.public.AWS.secret,
-    bucket: Meteor.settings.public.AWS.bucket
+    key: Meteor.settings.private.AWS.key,
+    secret: Meteor.settings.private.AWS.secret,
+    bucket: Meteor.settings.private.AWS.bucket
 };
