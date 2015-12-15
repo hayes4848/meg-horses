@@ -3,10 +3,18 @@
 <div class="hero-image"><img src="arabian2.jpg"></div>
 <br>
 <br>
+{{#if currentUser}}
+<h3>Welcome Back! </h3>
+{{else}}
 <a class=" btn btn-primary col-xs-12 login-buttons" href="#" role="button">{{> loginButtons}}</a>
+{{/if}}
 <br>
 <br>
+{{#if currentUser}}
+<a class=" btn btn-primary col-xs-12" href="{{pathFor 'horses'}}" role="button">View all horses now</a>
+{{else}}
 <a class=" btn btn-primary col-xs-12" href="{{pathFor 'horses'}}" role="button">Continue Without Signing In</a>
+{{/if}}
 <br>
 <br>
 <!-- <a class="text-center col-xs-12" href="">New? Click here to create an account.</a> -->
