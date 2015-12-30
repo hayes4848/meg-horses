@@ -1,14 +1,14 @@
 <template name="profile">
 <h1>User Page</h1>
-
+	
 	<form class="profile">
-		<input type="text" placeholder="First Name" class="firstName" value="{{firstName}}" />
-		<input type="text" placeholder="Last Name" class="lastName" value="{{lastName}}" />
-		<input type="text" placeholder="Barn" class="barn" value="{{barn}}" />
-		<input type="text" placeholder="City" class="city" value="{{city}}" />
-		<input type="text" placeholder="State" class="state" value="{{state}}" />
-		<input type="text" placeholder="phone" class="" value="{{phone}}" />
-		<input type="text" placeholder="email" class="" value="{{email}}" />
-		<input type="submit" value="Create Account" class="btn btn-primary"/>
+		<input type="text" placeholder="Name" class="name" name="name" value="{{#with profiles}}{{name}}{{/with}}" />
+		<input type="text" placeholder="Barn" class="barn" name="barn" value="{{#with profiles}}{{barn}}{{/with}}" />
+		<input type="text" placeholder="City" class="city" name="city" value="{{#with profiles}}{{city}}{{/with}}" />
+		<input type="text" placeholder="State" class="state" name="state" value="{{#with profiles}}{{state}}{{/with}}" />
+		<input type="text" placeholder="phone" class="" name="phone" value="{{#with profiles}}{{phone}}{{/with}}" />
+		<input type="text" placeholder="email" class="" name="email" value="{{#with profiles}}{{email}}{{/with}}" />
+		<input type="text" placeholder="Barn URL" class="" name="url" value="{{#with profiles}}{{url}}{{/with}}" />
+		<input type="submit" value="Update Account" class="btn btn-primary"/>
 	</form>
 </template>

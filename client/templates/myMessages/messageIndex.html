@@ -1,0 +1,9 @@
+<template name="messageIndex">
+<div class="row">
+{{#each messages}}
+	<a href="{{pathFor 'message'}}">
+		<div class="well">{{subject}}</div>
+	</a>
+{{/each}}
+</div>
+</template>
