@@ -14,14 +14,35 @@ Template.profile.events({
       user: Meteor.userId(), 
       date: new Date(),
     };
-   profile._id = Profiles.insert(profile);  
+   profile._id = Profiles.insert(profile); 
+   Router.go('profileShow'); 
+  }, 
+
+  'change .profileImg': function() {
+
+    var files = $("input.profileImg")[0].files
+
+     S3.upload({
+                files:files,
+                path:"profilePics"
+            },function(e,r){
+                url = r.url;
+                console.log(url);
+
+                picture = {
+                    url: url,
+                    profile: Meteor.userId()
+                }
+                ProfilePictures.insert(picture);
+        });
+
   }
 });
 
 Template.profile.helpers({
 
   profiles: function(){
-    return Profiles.findOne({user: Meteor.userId()});
+    return Profiles.findOne({user: Meteor.userId()}, {sort: { date: -1}});
   }
 
 });

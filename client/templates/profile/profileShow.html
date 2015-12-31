@@ -1,0 +1,27 @@
+<template name="profileShow">
+<div class="row">
+	{{#with profilePic}}
+		<img class="col-xs-6" src="{{url}}">
+	{{/with}}
+	{{#with profile}}
+		<div class="col-xs-6">
+			<h4>{{name}}</h4>
+			<p>{{barn}}</p>
+		</div>
+
+	{{/with}}
+</div>
+<hr>
+<div class="row">
+  {{#with profile}}
+	<div>{{email}}</div>
+	<div>{{phone}}</div>
+	<div>{{city}}, {{state}}</div>
+	<div>{{url}}</div>
+  {{/with}}	
+	<br>
+	<br>
+	<a class="btn btn-primary" href="{{pathFor 'profile'}}">Edit Profile</a>
+</div>
+
+</template>

@@ -2,7 +2,9 @@
 <div class="row">
 {{#each messages}}
 	<a href="{{pathFor 'message'}}">
-		<div class="well">{{subject}}</div>
+		<div class="well">
+			<div>{{subject}}</div>
+		</div>
 	</a>
 {{/each}}
 </div>
