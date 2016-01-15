@@ -46,3 +46,4 @@ Template.profile.helpers({
   }
 
 });
+

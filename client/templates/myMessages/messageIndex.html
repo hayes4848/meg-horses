@@ -1,11 +1,29 @@
 <template name="messageIndex">
 <div class="row">
+{{#if messages.count}}
 {{#each messages}}
 	<a href="{{pathFor 'message'}}">
-		<div class="well">
-			<div>{{subject}}</div>
+		<div class="">
+			<div class="row well">
+				<div class="col-xs-3">
+					{{#with senderPicture}}
+					<img class="image-fix" src="{{url}}">
+					{{/with}}
+					{{#with senderProfile}}
+					<div>{{name}}</div>
+					{{/with}}
+				</div>
+				<div class="col-xs-9">
+					<div>subject: {{subject}}</div>
+				</div>
+			</div>
+			
+
 		</div>
 	</a>
 {{/each}}
+{{else}}
+	<h2>Sorry, you don't have any messages at this time.</h2>
+{{/if}}
 </div>
 </template>

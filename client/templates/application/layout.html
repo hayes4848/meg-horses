@@ -7,6 +7,13 @@
       {{> header}}
       {{> yield}}
       {{> footer}}
+
+      <script type="text/javascript">
+      	$(document).on('click',function(){
+			$('.collapse').collapse('hide');
+		})
+      </script>
+
     </div>
   </div>
 </template>

@@ -1,16 +1,15 @@
 Template.singleHorsePublic.events({
     'submit form': function(e) {
     e.preventDefault();
-    console.log('submit fired');
 
    var message = {
     subject: $(e.target).find('[name=subject]').val(),
     message: $(e.target).find('[name=messageBody]').val(),
     to: $(e.target).find('[name=owner]').val(),
-    from: Meteor.userId()
+    from: Meteor.userId(), 
+    horse_id: $(e.target).find('[name=horse_id]').val()
    }
     message._id = Messages.insert(message);
-    console.log('message should be inserted');
     $('#myModal').modal('hide');
   }
 });
