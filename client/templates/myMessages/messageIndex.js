@@ -1,6 +1,6 @@
 Template.messageIndex.helpers({
 	messages: function(){
-		return Messages.find({to: Meteor.userId()});
+		return Messages.find({to: Meteor.userId()}, {sort: {_id: -1}});
 	}, 
 
 	senderProfile: function(){
