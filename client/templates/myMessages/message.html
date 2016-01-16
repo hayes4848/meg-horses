@@ -11,11 +11,6 @@
 	<div class="row">
 		<p>{{message}}</p>
 	</div>
-	{{#with horseInfo}}
-		<div class="row">
-			<p>{{horse_id}}</p>
-		</div>
-	{{/with}}
 	
 <hr>
 <br>
@@ -40,7 +35,7 @@
 	      <form name="message">
 	      	{{#with horseInfo}}
 	        <input type="hidden" name="owner" value="{{owner}}" >
-	        <input type="hidden" name="horse_id" value="{{horse_id}}" >
+	        <input type="hidden" name="horse_id" value="{{_id}}" >
 	        <input style="width: 100%;" type="text" name="subject" value="RE: Inquiry about {{name}}" >
 	        {{/with}}
 	        <input type="hidden" name="oldfrom" value="{{from}}" >
