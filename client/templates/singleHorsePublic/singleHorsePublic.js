@@ -11,6 +11,18 @@ Template.singleHorsePublic.events({
    }
     message._id = Messages.insert(message);
     $('#myModal').modal('hide');
+  }, 
+  'click #fav-star': function(e){
+    e.preventDefault();
+
+    var fav = {
+        horse: Session.get('horse'),
+        user: Meteor.userId()
+    }
+    Favorites.insert(fav);
+    $('#fav-star').css({'color': 'red'});
+      alert('this horse has been added to your favorites.');
+      console.log(Session.get('horse'));
   }
 });
 
@@ -36,3 +48,4 @@ Template.singleHorsePublic.helpers({
     }
 
 });
+

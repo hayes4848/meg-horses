@@ -1,0 +1,39 @@
+<template name="favorites">
+	<div class="row">
+		<div class="col-xs-12 text-center"><h3>My Favorites</h3></div>
+	</div>
+
+	{{#each favorites}}
+		{{#each horses}}
+			<a href="{{pathFor 'singleHorsePublic'}}">
+				<div class="row well">
+				{{#each pictures}}
+				{{#if isFirst}}
+					<div class="col-xs-3"><img class="img-responsive" src="{{url}}"></div>
+				{{/if}}
+				{{/each}}
+					<div class="col-xs-9">
+						<div class="row ">
+							<div class="col-xs-6 text-center horse-name">{{name}}</div>
+							<div class="col-xs-6 text-right">${{price}}</div>
+						</div>
+						<div class="row ">
+							<div class="col-xs-12">{{age}}</div>
+							<div class="col-xs-12">{{color}}</div>
+							<div class="col-xs-12">{{discipline}}</div>
+						</div>
+					</div>
+				</div>
+			</a>
+		{{/each}}
+	{{/each}}
+
+	
+</template>
+
+
+<template name="favorite-horses">
+
+
+
+</template>

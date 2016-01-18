@@ -1,8 +1,10 @@
 
 Template.message.events({
 	'click .messageDelete': function(event, template){
-		Messages.remove(template.data._id);
-		Router.go('messageIndex');
+		if (confirm("Delete this Message?")) {
+			Messages.remove(template.data._id);
+			Router.go('messageIndex');
+		}
 	}, 
 	'submit form': function(e) {
 	    e.preventDefault();
