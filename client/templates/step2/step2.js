@@ -1,24 +1,34 @@
 Template.step2.events({
-  'change .file_bag': function() {
+  // 'change .file_bag': function() {
 
-    var files = $("input.file_bag")[0].files
+  //   var files = $("input.file_bag")[0].files
 
-     S3.upload({
-                files:files,
-                path:"subfolder"
-            },function(e,r){
-                url = r.url;
-                console.log(url);
-                console.log(Session.get('horse'));
+  //    S3.upload({
+  //               files:files,
+  //               path:"subfolder"
+  //           },function(e,r){
+  //               url = r.url;
+  //               console.log(url);
+  //               console.log(Session.get('horse'));
 
-                picture = {
-                    url: url,
-                    horse_id: Session.get('horse')
-                }
-                Pictures.insert(picture);
-        });
+  //               picture = {
+  //                   url: url,
+  //                   horse_id: Session.get('horse')
+  //               }
+  //               Pictures.insert(picture);
+  //       });
 
+  // }
+
+'change .file_bag': function(event, template) {
+    var files = event.target.files;
+    for (var i = 0, ln = files.length; i < ln; i++) {
+      profileTestImages.insert(files[i], function (err, fileObj) {
+        console.log(fileObj);
+      });
+    }
   }
+ 
 });
 
 Template.step2.helpers({

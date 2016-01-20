@@ -1,12 +1,12 @@
 <template name="profileShow">
 <div class="row">
 	{{#with profilePic}}
-		<img class="col-xs-6" src="{{url}}">
+		<img class="col-xs-8 col-xs-offset-2 img-circle" src="{{url}}">
 	{{/with}}
 	{{#with profile}}
-		<div class="col-xs-6">
-			<h4>{{name}}</h4>
-			<p>{{barn}}</p>
+		<div class="row">
+			<h4 class="col-xs-8 col-xs-offset-2 text-center">{{name}}</h4>
+			<p class="col-xs-8 col-xs-offset-2 text-center">{{barn}}</p>
 		</div>
 
 	{{/with}}

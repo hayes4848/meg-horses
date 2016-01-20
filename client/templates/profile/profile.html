@@ -1,15 +1,29 @@
 <template name="profile">
 <h1>User Page</h1>
+
+{{#with profileImages}}
+	<img class="img-circle text-center col-xs-8 col-xs-offset-2" src="{{this.url}}">
+
+{{/with}}	
 	
 	<form class="profile">
-		<input type="file" class="profileImg" />
-		<input type="text" placeholder="Name" class="name" name="name" value="{{#with profiles}}{{name}}{{/with}}" />
-		<input type="text" placeholder="Barn" class="barn" name="barn" value="{{#with profiles}}{{barn}}{{/with}}" />
-		<input type="text" placeholder="City" class="city" name="city" value="{{#with profiles}}{{city}}{{/with}}" />
-		<input type="text" placeholder="State" class="state" name="state" value="{{#with profiles}}{{state}}{{/with}}" />
-		<input type="text" placeholder="phone" class="" name="phone" value="{{#with profiles}}{{phone}}{{/with}}" />
-		<input type="text" placeholder="email" class="" name="email" value="{{#with profiles}}{{email}}{{/with}}" />
-		<input type="text" placeholder="Barn URL" class="" name="url" value="{{#with profiles}}{{url}}{{/with}}" />
-		<input type="submit" value="Update Account" class="btn btn-primary"/>
+		<input class="col-xs-offset-2 col-xs-8 profileImg" type="file" />
+		
+		<input class="col-xs-offset-2 col-xs-8" type="text" placeholder="Name" name="name" value="{{#with profiles}}{{name}}{{/with}}" />
+		
+		<input class="col-xs-offset-2 col-xs-8" type="text" placeholder="Barn" name="barn" value="{{#with profiles}}{{barn}}{{/with}}" />
+		
+		<input class="col-xs-offset-2 col-xs-8" type="text" placeholder="City" name="city" value="{{#with profiles}}{{city}}{{/with}}" />
+		
+		<input class="col-xs-offset-2 col-xs-8" type="text" placeholder="State" name="state" value="{{#with profiles}}{{state}}{{/with}}" />
+		
+		<input class="col-xs-offset-2 col-xs-8" type="text" placeholder="phone" name="phone" value="{{#with profiles}}{{phone}}{{/with}}" />
+		
+		<input class="col-xs-offset-2 col-xs-8" type="text" placeholder="email" name="email" value="{{#with profiles}}{{email}}{{/with}}" />
+		
+		<input class="col-xs-offset-2 col-xs-8" type="text" placeholder="Barn URL" name="url" value="{{#with profiles}}{{url}}{{/with}}" />
+		
+		<input class="col-xs-offset-2 col-xs-8 btn btn-primary" type="submit" value="Update Account"/>
+	
 	</form>
 </template>

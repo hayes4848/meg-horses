@@ -18,32 +18,58 @@ Template.profile.events({
    Router.go('profileShow'); 
   }, 
 
-  'change .profileImg': function() {
+  // 'change .profileImg': function() {
 
-    var files = $("input.profileImg")[0].files
+  //   var files = $("input.profileImg")[0].files
 
-     S3.upload({
-                files:files,
-                path:"profilePics"
-            },function(e,r){
-                url = r.url;
-                console.log(url);
+  //    S3.upload({
+  //               files:files,
+  //               path:"profilePics"
+  //           },function(e,r){
+  //               url = r.url;
+  //               console.log(url);
 
-                picture = {
-                    url: url,
-                    profile: Meteor.userId()
-                }
-                ProfilePictures.insert(picture);
-        });
+  //               picture = {
+  //                   url: url,
+  //                   profile: Meteor.userId()
+  //               }
+  //               ProfilePictures.insert(picture);
+  //       });
 
+  // }
+
+  // 'change .profileImg': function(event, template) {
+  //   var file = $("input.profileImg").get(0).files[0];
+  //   var fileObj = profileTestImages.insert(file);
+    
+
+  'change .profileImg': function(event, template) {
+    FS.Utility.eachFile(event, function(file) {
+      var newFile = new FS.File(file);
+      newFile.owner = Meteor.userId();
+      newFile.dateAdded = new Date();
+      profileTestImages.insert(newFile, function (err, fileObj) {
+        //If !err, we have inserted new doc with ID fileObj._id, and
+        //kicked off the data upload using HTTP
+      });
+    });
   }
+  
 });
 
 Template.profile.helpers({
 
   profiles: function(){
     return Profiles.findOne({user: Meteor.userId()}, {sort: { date: -1}});
-  }
+  },
+
+  profileImages: function(){
+    return profileTestImages.findOne({owner: Meteor.userId()}, {sort: {dateAdded: -1}});
+  },
+
+  // profilePictures: function(){
+  //   return ProfilePictures.find({owner: Meteor.userId()}, {sort: {updatedAt: -1}});
+  // }
 
 });
 
