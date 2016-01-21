@@ -29,7 +29,7 @@ Template.singleHorse.helpers({
     }, 
 
     pictures: function(){
-        return Pictures.find({horse_id: Session.get('horse')}).map(function(picture, index) {
+        return horseImages.find({horse_id: Session.get('horse')}).map(function(picture, index) {
           if (index === 0)
             picture.isFirst = true;
 

@@ -20,13 +20,17 @@ Template.step2.events({
 
   // }
 
+
 'change .file_bag': function(event, template) {
-    var files = event.target.files;
-    for (var i = 0, ln = files.length; i < ln; i++) {
-      profileTestImages.insert(files[i], function (err, fileObj) {
-        console.log(fileObj);
+    FS.Utility.eachFile(event, function(file) {
+      var newFile = new FS.File(file);
+      newFile.horse_id = Session.get('horse');
+      newFile.dateAdded = new Date();
+      horseImages.insert(newFile, function (err, fileObj) {
+        //If !err, we have inserted new doc with ID fileObj._id, and
+        //kicked off the data upload using HTTP
       });
-    }
+    });
   }
  
 });
@@ -42,13 +46,22 @@ Template.step2.helpers({
         return Horses.find({_id: Session.get('horse')});
     },
 
-    pictures: function(){
-        return Pictures.find({horse_id: Session.get('horse')}).map(function(picture, index) {
-          if (index === 0)
-            picture.isFirst = true;
+    // pictures: function(){
+    //     return Pictures.find({horse_id: Session.get('horse')}).map(function(picture, index) {
+    //       if (index === 0)
+    //         picture.isFirst = true;
 
-          return picture;
-        })
+    //       return picture;
+    //     })
+    // }
+
+    pictures: function(){
+      return horseImages.find({horse_id: Session.get('horse')}).map(function(picture, index) {
+        if (index === 0)
+          picture.isFirst = true;
+
+        return picture;
+      })
     }
 
 });

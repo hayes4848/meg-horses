@@ -5,29 +5,25 @@
 
 <form name="newHorse">
 	<div class="row">
-		<div class="col-xs-5 text-right"><label>Name:</label></div>	
-		<div class="col-xs-5"><input type="text" name="name" value=""  /></div>
+		<div class="col-xs-3 text-right"><label>Name:</label></div>	
+		<div class="col-xs-5"><input class="input-lg" type="text" name="name" value=""  /></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-5 text-right"><label>Age:</label></div>	
-		<div class="col-xs-5"><input type="text" name="age" value=""  /></div>
+		<div class="col-xs-3 text-right"><label>Age:</label></div>	
+		<div class="col-xs-5"><input class="input-lg" type="text" name="age" value=""  /></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-5 text-right"><label>Gender:</label></div>
-		<div class="col-xs-5"><input type="text" name="gender" value=""  /></div>
+		<div class="col-xs-3 text-right"><label>Gender:</label></div>
+		<div class="col-xs-5"><input class="input-lg" type="text" name="gender" value=""  /></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-5 text-right"><label>Weight:</label></div>
-		<div class="col-xs-5"><input type="text" name="color" value=""  /></div>
+		<div class="col-xs-3 text-right"><label>Breed:</label></div>
+		<div class="col-xs-5"><input class="input-lg" type="text" name="breed" value=""  /></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-5 text-right"><label>Breed:</label></div>
-		<div class="col-xs-5"><input type="text" name="breed" value=""  /></div>
-	</div>
-	<div class="row">	
-		<div class="col-xs-5 text-right"><label>Discipline:</label></div>
+		<div class="col-xs-3 text-right"><label>Discipline:</label></div>
 		<div class="col-xs-5">
-			<select>
+			<select class="input-lg">
 				<option></option>
 				<option class="" name="" value="">Park/English Pleasure</option>
 				<option class="" name="" value="">Country English Pleasure</option>
@@ -41,12 +37,16 @@
 			</select></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-5 text-right"><label>Price:</label></div>
-		<div class="col-xs-5"><input type="integer" name="price" value=""  /></div>
+		<div class="col-xs-3 text-right"><label>Price:</label></div>
+		<div class="col-xs-5"><input class="input-lg" type="integer" name="price" value=""  /></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-3 text-right"><label>Hide Price?</label></div>	
+		<div class="col-xs-8"><input class="input-lg" type="checkbox" name="priceCheck"  ><span class="text-right">(If checked, price will not display) </span></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-5 text-right"><label>Description:</label></div>
-		<div class="col-xs-5"><textarea name="description" value=""></textarea></div>
+		<div class="col-xs-3 text-right"><label>Description:</label></div>
+		<div class="col-xs-8"><textarea class="col-xs-12" name="description" value=""></textarea></div>
 	</div> <br />
 	<div class="row">	
 		<div class="col-xs-12 text-center"><input type="submit" value="Submit" class="btn btn-primary"/></div>
