@@ -22,7 +22,14 @@ Template.singleHorsePublic.events({
     Favorites.insert(fav);
     $('#fav-star').css({'color': 'red'});
       alert('this horse has been added to your favorites.');
-      console.log(Session.get('horse'));
+      console.log(this.favorited + 1);
+
+      var newFav = this.favorited + 1;
+      
+    Horses.update(this._id, {
+        $set: {favorited: newFav }
+      });
+
   }
 });
 

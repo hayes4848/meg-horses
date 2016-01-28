@@ -1,27 +1,23 @@
 <template name='singleHorseEdit'>
 	<form name="editHorse">
 	<div class="row">
-		<div class="col-xs-6 text-right"><label>Name:</label></div>	
+		<div class="col-xs-3 text-right"><label>Name:</label></div>	
 		<div class="col-xs-6"><input type="text" name="name" value="{{name}}"  /></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-6 text-right"><label>Age:</label></div>	
+		<div class="col-xs-3 text-right"><label>Age:</label></div>	
 		<div class="col-xs-6"><input type="text" name="age" value="{{age}}"  /></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-6 text-right"><label>Gender:</label></div>
+		<div class="col-xs-3 text-right"><label>Gender:</label></div>
 		<div class="col-xs-6"><input type="text" name="gender" value="{{gender}}"  /></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-6 text-right"><label>Weight:</label></div>
-		<div class="col-xs-6"><input type="text" name="weight" value="{{weight}}"  /></div>
-	</div>
-	<div class="row">	
-		<div class="col-xs-6 text-right"><label>Breed:</label></div>
+		<div class="col-xs-3 text-right"><label>Breed:</label></div>
 		<div class="col-xs-6"><input type="text" name="breed" value="{{breed}}"  /></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-6 text-right"><label>Discipline:</label></div>
+		<div class="col-xs-3 text-right"><label>Discipline:</label></div>
 		<div class="col-xs-6">
 			<select>
 				<option value ="{{discipline}}"></option>
@@ -37,13 +33,28 @@
 			</select></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-6 text-right"><label>Price:</label></div>
+		<div class="col-xs-3 text-right"><label>Price:</label></div>
 		<div class="col-xs-6"><input type="integer" name="price" value="{{price}}"  /></div>
 	</div>
 	<div class="row">	
-		<div class="col-xs-6 text-right"><label>Description:</label></div>
+		<div class="col-xs-3 text-right"><label>Description:</label></div>
 		<div class="col-xs-6"><textarea name="description" value="{{description}}"></textarea></div>
 	</div> <br />
+	<div class="row">
+		<h2>Images</h2>
+		{{#each pictures}}
+			<div class="col-xs-4">
+				<img class="col-xs-12" src="{{url}}">
+				<div class="btn btn-danger btn-xs remove" id="{{_id}}">Remove Image</div>
+			</div>
+		{{/each}}
+	</div>
+
+	<div class="row">
+		<h3>Add new images</h3>
+		<input type="file" class="file_bag" />
+	</div>
+
 	<div class="row">	
 		<div class="col-xs-12 text-center"><input type="submit" value="Update" class="btn btn-primary"/></div>
 	</div>	

@@ -12,3 +12,14 @@ Template.horses.helpers({
         })
     }
 });
+
+Template.horses.events({
+  'click .pageviewupdate': function(e) {
+
+    var newPageView = this.pageView + 1;
+
+    Horses.update(this._id, {
+      $set: {pageView: newPageView}
+    });
+  }
+})
