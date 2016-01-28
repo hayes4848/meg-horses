@@ -6,7 +6,7 @@ Template.newHorse.events({
       age: $(e.target).find('[name=age]').val(),
       gender: $(e.target).find('[name=gender]').val(),
       breed: $(e.target).find('[name=breed]').val(),
-      discipline: $(e.target).find('[name=discipline]').val(),
+      discipline: $('#selectDropdown').val(),
       price: $(e.target).find('[name=price]').val(),
       displayPrice: $(e.target).find('[name=priceCheck]').val(),
       description: $(e.target).find('[name=description]').val(), 
@@ -16,6 +16,7 @@ Template.newHorse.events({
       pageView: 0
     };
 
+    console.log($('#someId').val());
     horse._id = Horses.insert(horse);
     Router.go('step2', horse);
   }

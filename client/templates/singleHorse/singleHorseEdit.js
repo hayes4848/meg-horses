@@ -8,7 +8,7 @@ Template.singleHorseEdit.events({
       age: $(e.target).find('[name=age]').val(),
       gender: $(e.target).find('[name=gender]').val(),
       breed: $(e.target).find('[name=breed]').val(),
-      discipline: $(e.target).find('[name=discipline]').val(),
+      discipline: $('#selectDropdown').val(),
       price: $(e.target).find('[name=price]').val(),
       description: $(e.target).find('[name=description]').val(), 
       name: $(e.target).find('[name=name]').val(), 
