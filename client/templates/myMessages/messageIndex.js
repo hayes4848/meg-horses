@@ -12,6 +12,6 @@ Template.messageIndex.helpers({
 	// }
 
 	senderPicture: function(){
-    return profileTestImages.findOne({owner: Meteor.userId()}, {sort: {dateAdded: -1}});
+    return profileTestImages.findOne({owner: this.from}, {sort: {dateAdded: -1}});
   },
 });
