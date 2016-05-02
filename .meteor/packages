@@ -19,7 +19,6 @@ mrgalaxy:stripe
 momentjs:moment
 random
 themeteorchef:jquery-validation
-standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -36,3 +35,5 @@ cfs:graphicsmagick
 cfs:access-point
 cfs:ejson-file
 aldeed:collection2
+standard-minifier-css
+standard-minifier-js
