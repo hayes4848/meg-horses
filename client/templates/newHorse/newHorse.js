@@ -16,7 +16,6 @@ Template.newHorse.events({
       pageView: 0
     };
 
-    console.log($('#someId').val());
     horse._id = Horses.insert(horse);
     Router.go('step2', horse);
   }

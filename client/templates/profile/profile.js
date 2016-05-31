@@ -41,6 +41,10 @@ Template.profile.events({
   // 'change .profileImg': function(event, template) {
   //   var file = $("input.profileImg").get(0).files[0];
   //   var fileObj = profileTestImages.insert(file);
+
+  'click #imageUpload': function(){
+    alert('you clicked this');
+  },
     
 
   'change .profileImg': function(event, template) {
